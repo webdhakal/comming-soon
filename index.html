@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Comming Soon</title>
+    <title>Coming Soon</title>
 
     <link
       rel="stylesheet"
@@ -28,24 +28,60 @@
     <link rel="stylesheet" href="./assets/css/app.css" />
   </head>
   <body>
-    <div class="comming-soon-wrapper">
-      <div class="left-nav">
+    <div class="coming-soon-wrapper">
+      <div class="slider-wrapper">
+        <img
+          src="./assets/img/Tribali_website_comingsoon1.png"
+          alt="Tribali Website Coming Soon 1"
+        />
+        <img
+          src="./assets/img/Tribali_website_comingsoon2.png"
+          alt="Tribali Website Coming Soon 2"
+        />
+        <img
+          src="./assets/img/Tribali_website_comingsoon3.png"
+          alt="Tribali Website Coming Soon 3"
+        />
+      </div>
+
+      <!-- <div class="slider-wrapper">
+        <div>
+          <img
+            src="./assets/img/Tribali_website_comingsoon1.png"
+            alt="Tribali Website Coming Soon 1"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Tribali_website_comingsoon2.png"
+            alt="Tribali Website Coming Soon 2"
+          />
+        </div>
+        <div>
+          <img
+            src="./assets/img/Tribali_website_comingsoon3.png"
+            alt="Tribali Website Coming Soon 3"
+          />
+        </div>
+      </div> -->
+
+      <div class="contents">
         <div class="logo-wrapper">
           <img src="./assets/img/logo.png" alt="Logo" />
         </div>
         <div class="intro-text">
-          <h2>Comming Soon</h2>
+          <h2>Coming Soon</h2>
           <div class="description">
             In the meantime follow us on Instagram, or find us at the market (
             Bondi and Paddington)
           </div>
 
-          <form action="" class="subscribe-form">
+          <form action="#" class="subscribe-form" autocomplete="off">
             <div class="coolinput">
-              <label for="input" class="text">Name:</label>
+              <label for="input" class="text">Email:</label>
               <input
                 type="text"
-                placeholder="Write here..."
+                placeholder="Subscribe your email"
                 name="input"
                 class="input"
               />
@@ -58,31 +94,9 @@
           <p>Sign up to find out when we launch!</p>
 
           <div class="socials">
-            <a href="https://www.instagram.com/tribali.jewellery/"
-              ><i class="fa-brands fa-instagram fa-lg"></i
-            ></a>
-          </div>
-        </div>
-      </div>
-      <div class="right-nav">
-        <div class="slider-wrapper">
-          <div>
-            <img
-              src="./assets/img/Tribali_website_comingsoon1.png"
-              alt="Tribali Website Comming Soon 1"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/img/Tribali_website_comingsoon2.png"
-              alt="Tribali Website Comming Soon 2"
-            />
-          </div>
-          <div>
-            <img
-              src="./assets/img/Tribali_website_comingsoon3.png"
-              alt="Tribali Website Comming Soon 3"
-            />
+            <a href="https://www.instagram.com/tribali.jewellery/">
+              <i class="fa-brands fa-instagram fa-lg"></i>
+            </a>
           </div>
         </div>
       </div>
@@ -112,6 +126,27 @@
           slidesToScroll: 1,
         });
       });
+    </script>
+
+    <script>
+      document
+        .getElementsByClassName("subscribe-form")
+        .addEventListener("submit", function (event) {
+          event.preventDefault(); // Prevent the default form submission
+
+          const emailInput = document.getElementById("emailInput").value;
+          const subject = "New Subscriber";
+          const body = "Body content goes here";
+
+          if (emailInput) {
+            const mailtoLink = `mailto:${emailInput}?subject=${encodeURIComponent(
+              subject
+            )}&body=${encodeURIComponent(body)}`;
+            window.location.href = mailtoLink;
+          } else {
+            alert("Please enter a valid email address.");
+          }
+        });
     </script>
   </body>
 </html>
