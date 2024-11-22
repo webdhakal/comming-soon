@@ -17,7 +17,7 @@ body {
     position: relative;
 
     @media (min-width: 992px) {
-        grid-template-columns: 300px 1fr;
+        grid-template-columns: 1fr;
         grid-template-rows: initial;
     }
 
@@ -27,14 +27,12 @@ body {
         position: absolute;
         z-index: 1000;
 
-        @media (max-width: 992px) {
-            height: 100vh;
-            width: 100%;
-            align-items: center;
-        }
+        height: 100vh;
+        width: 100%;
+        align-items: center;
 
         @media (min-width: 992px) {
-            position: initial;
+            width: 400px;
         }
 
         padding: 20px;
@@ -43,16 +41,11 @@ body {
 
         .logo-wrapper {
             align-self: center;
-            width: 80px;
-            height: 80px;
-
-            @media (max-width: 992px) {
-                width: 100px;
-                height: 100px;
-            }
+            width: 180px;
+            height: 180px;
 
             img {
-                width: auto;
+                width: 100%;
                 height: 100%;
                 object-fit: cover;
             }
@@ -65,12 +58,23 @@ body {
             justify-content: space-between;
             height: 300px;
 
-            @media (max-width: 992px) {
+            width: 300px;
+
+            @media (min-width: 480px) {
+                width: 380px;
+            }
+
+            @media (min-width: 992px) {
                 width: 400px;
-                text-align: center;
-                background-color: rgb(232, 232, 232, 0.8);
-                padding: 20px;
-                border-radius: 5%;
+            }
+
+            text-align: center;
+            background-color: rgb(232, 232, 232, 0.8);
+            padding: 20px;
+            border-radius: 5%;
+
+            @media (min-width: 992px) {
+                margin-left: 20px;
             }
 
             h2 {
@@ -121,25 +125,39 @@ body {
                     border: 0;
                     padding: 0 18px;
                     cursor: pointer;
+                    color: var(--form-border);
                 }
             }
 
             p {
                 font-weight: 400;
             }
+
+            .socials {
+                a {
+                    color: red;
+                }
+            }
         }
     }
 
     .right-nav {
+        width: 100vw;
+
+        // @media (min-width: 992px) {
+        //     width: calc(100vw - 200px);
+        // }
+
         .slider-wrapper {
+            width: 100%;
             height: 100vh;
-            width: 100vw;
             overflow: hidden;
 
             img {
-                width: 100vw;
+                width: 100%;
                 height: 100vh;
                 object-fit: cover;
+                aspect-ratio: 3/2;
             }
         }
     }
